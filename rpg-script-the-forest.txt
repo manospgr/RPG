@@ -1,0 +1,73 @@
+Chapter One
+The forest
+
+Enter your name
+[		]
+
+You entered a forest
+
+You go inside
+
+You notice a sharp branch on the ground
+	[pick it up]
+		you acquired a stick
+		you left
+	[leave it]
+		you left
+		
+You encounter an angry goblin
+
+What do you do?
+	[Fight it]
+		You struck it with your stick and it fell down
+		The goblin attacked and couldn't defent yourself
+		Game over
+	[flee]
+		you escaped
+		
+You stumble upon a blacksmith
+	[Your enter]
+		*The blacksmith offers you a weapon upgrade 
+		do you accept?
+		*The blacksmith offers you a weapon	(if you didnt took the stick)
+		
+		[yes]
+		You acquired a dagger
+		
+		[no]
+		you politly defined
+	[you continue you journey]
+	
+You left and continued your journey 
+
+You see from afar a wild beast
+
+Do you wish to fight it?
+	[yes]
+	After some struggle you manage to defeat the beast 
+	You looted the wild beast, and you found 11 gold 
+	
+	[no]
+	You chose not to fight, even though you could
+
+You spotted a shop at a distance
+
+Do you approach?
+	[yes]
+	You entered the shop you saw a thing piece of armor (11 gold)
+	Do you wish to buy it?
+		[yes]
+		Gold-
+		Feel protected
+		
+		[no]
+		Your decide to keep your gold
+	[no]
+	You chose to be as safe as possible and continued walking
+
+You managed to get out of the forest alive
+
+You see a dungeon 
+
+Do you enter?
+TO BE CONTINUED
