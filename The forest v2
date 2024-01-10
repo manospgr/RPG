@@ -1,85 +1,9 @@
 #include <stdio.h>
-int the_stick(char input);
-int goblin_fight(char input);
-int main(){
-    char username[15];
-	char choice;
-	int a=0;
-
-    printf("Chapter One\n");
-    printf("The forest\n");
-    printf("Enter your name(Up to 15 characters\n");
-    scanf(" %s",username);
-    printf("You entered a forest\n");
-    printf("You go inside\n");
-    printf("You notice a sharp branch on the ground\n");
-    while(1){
-    if(a!=0)
-    {
-    	break;
-	}
-    printf("pick it up [a]\n");
-    printf("leave it [b]\n");
-    scanf(" %c",&choice);
-    
-    if(a==0)
-    {
-    	a=the_stick(choice);
-    	continue;
-    }
-    break;
-    }
-    printf("You encounter an angry goblin\n");
-    printf("What do you do?\n");
-    printf("Fight it [a]\n");
-    printf("flee [b]\n");
-    getchar();
-    scanf(" %c",&choice);
-    while(1)
-    {
-    if(a==0)
-    {
-    	a=goblin_fight(choice);
-    	continue;
-    }
-    else if(a==1){
-    goblin_fight(choice);
-    return 0;
-    break;
-	}
-	}
-    return 0;
-}
-
-int the_stick(char input){
-switch (input)
-{
-
-case 'a':
-	{
-    printf("you acquired a stick\n");
-    printf("you left\n");
-    }
-    return 1;
-    break;
-case 'b':
-	{
-    printf("you left\n");
-    return 2;
-    break;
-	}
-default:
-	{
-    printf("you chose wrong input!\n");
-    return 0;
-    }
-}
-}
 
 int goblin_fight(char input){
 switch (input)
 {
-
+case 'A':
 case 'a':
 	{
     printf("You struck it with your stick and it fell down\n");
@@ -88,6 +12,7 @@ case 'a':
     }
     return 1;
     break;
+case 'B':
 case 'b':
 	{
     printf("you escaped\n");
@@ -100,4 +25,65 @@ default:
     return 0;
     }
 }
+}
+
+int the_stick(char input){
+switch (input)
+{
+case 'A':
+case 'a':
+	{
+    printf("you acquired a stick\n");
+    printf("you left\n");
+    }
+    return 1;
+    break;
+case 'B':
+case 'b':
+	{
+    printf("you left\n");
+    return 1;
+    break;
+	}
+default:
+	{
+    printf("you chose wrong input!\n");
+    return 0;
+    }
+}
+}
+int main()
+{
+    char username[15];
+	char choice;
+
+    printf("Chapter One\n");
+    printf("The forest\n");
+    printf("Enter your name(Up to 15 characters)\n");
+    scanf(" %s",username);
+    printf("You entered a forest\n");
+    printf("You go inside\n");
+    printf("You notice a sharp branch on the ground\n");
+    while(1)
+    {
+    printf("pick it up [a]\n");
+    printf("leave it [b]\n");
+    scanf(" %c",&choice);
+    if(!the_stick(choice))
+        continue;
+    break;
+    }
+    printf("You encounter an angry goblin\n");
+    printf("What do you do?\n");
+    while(1)
+    {
+    printf("Fight it [a]\n");
+    printf("flee [b]\n");
+    getchar();
+    scanf(" %c",&choice);
+    if(!goblin_fight(choice))
+        continue;
+    break;
+    }
+    return 0;
 }
