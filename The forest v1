@@ -49,3 +49,50 @@ default:
     }
 }
 }
+
+/*				antonhs way to loop
+ while(1){
+    if(a!=0)
+    {
+    	break;
+	}
+    printf("pick it up [a]\n");
+    printf("leave it [b]\n");
+    scanf(" %c",&choice);
+    
+    if(a==0)
+    {
+    	a=the_stick(choice);
+    	continue;
+    }
+    break;
+    }
+    printf("You encounter an angry goblin\n");
+    return 0;
+}
+
+int the_stick(char input){
+switch (input)
+{
+
+case 'a':
+	{
+    printf("you acquired a stick\n");
+    printf("you left\n");
+    }
+    return 1;
+    break;
+case 'b':
+	{
+    printf("you left\n");
+    return 2;
+    break;
+	}
+default:
+	{
+    printf("you chose wrong input!\n");
+    return 0;
+    }
+}
+}
+*/
