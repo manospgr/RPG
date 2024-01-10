@@ -51,7 +51,21 @@ default:
 }
 
 /*				antonhs way to loop
- while(1){
+#include <stdio.h>
+int the_stick(char input);
+int main(){
+    char username[15];
+	char choice;
+	int a=0;
+
+    printf("Chapter One\n");
+    printf("The forest\n");
+    printf("Enter your name(Up to 15 characters\n");
+    scanf(" %s",username);
+    printf("You entered a forest\n");
+    printf("You go inside\n");
+    printf("You notice a sharp branch on the ground\n");
+    while(1){
     if(a!=0)
     {
     	break;
