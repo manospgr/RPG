@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <stdbool.h>
-
-char username[15];
-char choice;
 
 int main(){
-    
+    char username[15];
+	char choice;
+
     printf("Chapter One\n");
     printf("The forest\n");
     printf("Enter your name(Up to 15 characters\n");
@@ -13,7 +11,8 @@ int main(){
     printf("You entered a forest\n");
     printf("You go inside\n");
     printf("You notice a sharp branch on the ground\n");
-    while(1){
+    while(1)
+    {
     printf("pick it up [a]\n");
     printf("leave it [b]\n");
     scanf(" %c",&choice);
@@ -24,22 +23,28 @@ int main(){
     printf("You encounter an angry goblin\n");
     return 0;
 }
-void the_stick(char input){
-// printf("You notice a sharp branch on the ground\n");
-// printf("pick it up [a]\n");
-// printf("leave it [b]\n");
-// scanf(" %c",&input);
+
+int the_stick(char input){
 switch (input)
 {
-case 'a':if (input==choice){
+
+case 'a':
+	{
     printf("you acquired a stick\n");
     printf("you left\n");
     }
+    return 1;
     break;
-case 'b':if(input==choice)
+case 'b':
+	{
     printf("you left\n");
+    return 1;
     break;
+	}
 default:
+	{
     printf("you chose wrong input!\n");
+    return 0;
     }
+}
 }
