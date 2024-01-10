@@ -6,7 +6,7 @@ int main(){
 
     printf("Chapter One\n");
     printf("The forest\n");
-    printf("Enter your name(Up to 15 characters\n");
+    printf("Enter your name(Up to 15 characters)\n");
     scanf(" %s",username);
     printf("You entered a forest\n");
     printf("You go inside\n");
@@ -27,7 +27,7 @@ int main(){
 int the_stick(char input){
 switch (input)
 {
-
+case 'A':
 case 'a':
 	{
     printf("you acquired a stick\n");
@@ -35,6 +35,7 @@ case 'a':
     }
     return 1;
     break;
+case 'B':
 case 'b':
 	{
     printf("you left\n");
