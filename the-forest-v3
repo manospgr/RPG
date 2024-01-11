@@ -5,8 +5,8 @@ char choice;
 struct item{
 	int amount;
 	int id;
-	char name[150];
-	char description[5000];
+	//char name[150];
+	//char description[5000];
 	char *name;
 	char *description;
 };
