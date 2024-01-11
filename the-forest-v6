@@ -16,24 +16,23 @@ struct item {
 
 struct item inv[20];
 
-int search_item(int id){
+int search_item(int id) {
 	int found=0;
 	int i;
-	for(  i =0;i<20;i++)
-		{
-			if(inv[i].id==id){
-				found=1;
-				break;
-			}
+	for(  i =0; i<20; i++) {
+		if(inv[i].id==id) {
+			found=1;
+			break;
 		}
-		return found;
+	}
+	return found;
 }
 
-void give_item(char name[150],char description[5000], int id, int amount){
-			inv[id].name = name;
-			inv[id].description=description;
-			inv[id].id=id;
-			inv[id].amount=amount;
+void give_item(char name[150],char description[5000], int id, int amount) {
+	inv[id].name = name;
+	inv[id].description=description;
+	inv[id].id=id;
+	inv[id].amount=amount;
 }
 
 int goblin_fight(char input) {
@@ -140,8 +139,8 @@ int main() {
 			break;
 	}
 	if(choice=='a'||choice=='A') {
-	int stick=search_item(1);
-		
+		int stick=search_item(1);
+
 		if(stick) {
 			printf("The blacksmith offers you a weapon upgrade\n");
 			give_item("Dagger","A Sharp Dagger",2,1);
