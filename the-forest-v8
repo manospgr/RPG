@@ -23,7 +23,7 @@ int search_item(int id) {
 	}
 	return found;
 }
-
+/*
 void inventory(){
     puts("*****INVENTORY*****\n");
 	int i;
@@ -34,7 +34,7 @@ void inventory(){
 		}
     }
     printf("*******************\n");
-}
+}*/
 
 void give_item(char name[150],char description[5000], int id, int amount) {
 	inv[id].name = name;
@@ -190,7 +190,7 @@ int main() {
 			switch (choice) {
 				case 'A':
 				case 'a': {
-					if (search_item(2);)
+					if (search_item(2))
 					{
 					printf("After some struggle you manage to defeat the beast  \n");
 					printf("You looted the wild beast, and you collected 11 gold  ");
@@ -276,10 +276,10 @@ int main() {
 				break;
 		}
 		printf("You thanked the casher and left\n");
-		printf("You are walking in the Forest again\n")
+		printf("You are walking in the Forest again\n");
 		}
 		}
-		printf("You managed to get out of the forest alive\n")
+		printf("You managed to get out of the forest alive\n");
 		
 	return 0;
 }
