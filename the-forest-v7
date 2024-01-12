@@ -1,0 +1,213 @@
+#include <stdio.h>
+#include <string.h>
+
+char username[15];
+char choice;
+struct item {
+	int amount;
+	int id;
+	char *name;
+	char *description;
+    int gold;
+};
+
+struct item inv[20];
+
+int search_item(int id) {
+	int found=0;
+	int i;
+	for(  i =0; i<20; i++) {
+		if(inv[i].id==id) {
+			found=1;
+			break;
+		}
+	}
+	return found;
+}
+
+void inventory(){
+    puts("*****INVENTORY*****\n");
+	int i;
+	for(  i =0; i<20; i++) {
+        printf("%s %d\n%s",inv[i].name,inv[i].amount,inv[i].description);
+		if(inv[i]=i) {
+			break;
+		}
+    }
+    printf("*******************\n");
+}
+
+void give_item(char name[150],char description[5000], int id, int amount) {
+	inv[id].name = name;
+	inv[id].description=description;
+	inv[id].id=id;
+	inv[id].amount=amount;
+}
+
+int goblin_fight(char input) {
+	switch (input) {
+		case 'A':
+		case 'a': {
+			printf("You struck it with your stick and it fell down\n");
+			printf("The goblin attacked and couldn't defent yourself\n");
+			printf("Game over\n");
+		}
+		return 1;
+		break;
+		case 'B':
+		case 'b': {
+			printf("you escaped\n");
+			return 2;
+			break;
+		}
+		default: {
+			printf("you chose wrong input!\n");
+			return 0;
+		}
+	}
+}
+
+int the_stick(char input) {
+	switch (input) {
+		case 'A':
+		case 'a': {
+			printf("you acquired a stick\n");
+			printf("you left\n");
+			give_item("Branch","A Sharp Branch",1,1);
+			return 1;
+			break;
+		}
+		case 'B':
+		case 'b': {
+			printf("you left\n");
+			return 1;
+			break;
+		}
+		default: {
+			printf("you chose wrong input!\n");
+		}
+	}
+}
+
+int main() {
+	printf("Chapter One\n");
+	printf("The forest\n");
+	printf("Enter your name(Up to 15 characters)\n");
+	scanf(" %s",username);
+	while(1) {
+		printf("You entered a forest\n");
+		printf("You go inside\n");
+		printf("You notice a sharp branch on the ground\n");
+		while(1) {
+			printf("pick it up [a]\n");
+			printf("leave it [b]\n");
+			scanf(" %c",&choice);
+			if(!the_stick(choice))
+				continue;
+			break;
+		}
+		printf("You encounter an angry goblin\n");
+		printf("What do you do?\n");
+		while(1) {
+			printf("Fight it [a]\n");
+			printf("flee [b]\n");
+			scanf(" %c",&choice);
+			if(!goblin_fight(choice))
+				continue;
+			break;
+		}
+		if(goblin_fight(choice)==1)
+			continue;
+		else
+			break;
+	}
+	printf("After a While you reach a small village\n");
+	printf("You stumble upon a blacksmith\n");
+	printf("You can enter or you can continue you journey\n");
+	while (1) {
+		printf("[a] To enter\n[b] To continue\n");
+		scanf(" %c",&choice);
+		switch (choice) {
+			case 'A':
+			case 'a': {
+				printf("You entered the Blacksmiths Shop\n");
+				break;
+			}
+
+			case 'B':
+			case 'b': {
+				printf("You left and continued you journey\n");
+				break;
+			}
+			default: {
+				printf("you chose wrong input!\n");
+				continue;
+			}
+		}
+		if(choice=='a'||choice=='A'||choice=='b'||choice=='B')
+			break;
+	}
+	if(choice=='a'||choice=='A') {
+		int stick=search_item(1);
+
+		if(stick) {
+			printf("The blacksmith offers you a weapon upgrade\n");
+			give_item("Dagger","A Sharp Dagger",2,1);
+		} else
+			printf("The blacksmith offers you a weapon\n");
+		printf("Do you accept?\n");
+		while(1) {
+			printf("[a] Yes\n[b] No\n");
+			scanf(" %c",&choice);
+			switch (choice) {
+				case 'A':
+				case 'a': {
+					printf("You acquired a dagger\n");
+					give_item("Dagger","A Sharp Dagger",2,1);
+					break;
+				}
+
+				case 'B':
+				case 'b': {
+					printf("you politly defined\n");
+					break;
+				}
+				default: {
+					printf("you chose wrong input!\n");
+					continue;
+				}
+			}
+			if(choice=='a'||choice=='A'||choice=='b'||choice=='B')
+				break;
+		}
+	}
+    printf("He offers you a small worm room to stay until you are ready to leave the village\n");
+	printf("You left to continue your journey! \n");
+    printf("You see from afar a wild beast \n");
+    printf("Do you wish to fight it? \n");
+    while(1) {
+			printf("[a] Yes\n[b] No\n");
+			scanf(" %c",&choice);
+			switch (choice) {
+				case 'A':
+				case 'a': {
+					printf("After some struggle you manage to defeat the beast  \n");
+					printf("You looted the wild beast, and you collected 11 gold  ");
+					break;
+				}
+
+				case 'B':
+				case 'b': {
+					printf("You chose not to fight, even though you could \n");
+					break;
+				}
+				default: {
+					printf("you chose wrong input! \n");
+					continue;
+				}
+			}
+			if(choice=='a'||choice=='A'||choice=='b'||choice=='B')
+				break;
+		}
+	return 0;
+}
